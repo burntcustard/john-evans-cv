@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>John Evans CV</title>
+    <meta charset="utf-8" />
+
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        background: #222;
+        line-height: 1.3;
+      }
+
+      main {
+        grid-template-columns: 280px 1fr;
+        background: #fff;
+        color: #222;
+        margin: 1rem;
+        box-shadow: 0 2px 8px #000;
+        max-width: 1e3px;
+      }
+
+      @media (min-width: 800px) {
+        main {
+          display: grid;
+        }
+      }
+
+      main section {
+        padding: 1.25rem;
+      }
+
+      .about, .skills {
+        grid-column-start: 1;
+      }
+
+      .content {
+        grid-column: 2;
+      }
+
+      .about {
+        background: #fc1;
+      }
+
+      .about > div {
+        display: flex;
+        gap: .5rem;
+      }
+
+      .skills {
+        background: #f1f1f1;
+        grid-row-start: 2;
+        grid-row-end: 9;
+      }
+
+      .intro {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      section > *:first-child {
+        margin-block-start: 0;
+      }
+
+      section > *:last-child {
+        margin-block-end: 0;
+      }
+
+      h2 {
+        margin-block-end: .5em;
+      }
+
+      h1 {
+        display: grid;
+        margin-block-start: 0;
+        margin-block-end: 1rem;
+      }
+
+      h1 > *:nth-child(2) {
+        font-size: 1.125rem;
+        font-weight: normal;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="about">
+        <h1>
+          <span>John Evans</span>
+          <span>Senior Front-End Developer</span>
+        </h1>
+
+        <div>📨<a href="mailto:burntcustard@gmail.com">burntcustard@gmail.com</a></div>
+        <div>📞<a href="tel:07825663225">07825663225</a></div>
+        <div><img alt="" src="https://static.licdn.com/sc/h/8s162nmbcnfkg7a0k8nq9wwqo" width="20" height="20"/><a href="https://www.linkedin.com/in/john-evans-737958b0/">LinkedIn</a></div>
+        <div>🌐<a href="https://burnt.io/">burnt.io</a></div>
+        <div><span>📍</span>Godalming, UK</div>
+      </section>
+
+      <section class="intro">
+        <h2>About</h2>
+
+        <p>Senior UX Engineer at Lighthouse London, a UX & design agency. During my 5 years at Lighthouse, I’ve worked on many internal and client projects, as a front-end web developer, accessibility specialist, and project lead on small teams of designers and developers.
+
+        <p>
+          Frequently the slot-in “front of the front-end” engineer within a development team, bridging the gap between static designs, and interactive, responsive products and websites. In those teams I:
+        </p>
+
+        <ul>
+          <li>Lead on styling, choosing CSS tools, libraries, and techniques.</li>
+          <li>Create web components (usually with React, TypeScript, & Jest), often as part of a design system.</li>
+          <li>Upskill other team members in styling tools chosen, as well as UX best practices and accessibility.</li>
+        </ul>
+      </section>
+
+      <section class="skills">
+        <h2>Skills</h2>
+        <p>
+          HTML -> Accessibility, aria-attributes,
+          JavaScript, Typescript, Node.js
+          Libraries & Frameworks -> React, Storybook, NextJS, Vue
+          Testing with Jest & React Testing Library
+          CSS -> SASS/SCSS, BEM, PostCSS, TailwindCSS, styled-components, stemCSS(?)
+          GitHub actions & GitLab CI/CD
+          Cross-OS development (Linux/Windows/macOS/Android/iOS)
+          CMS & SSGs: WordPress, TinaCMS, 11ty, Contentful
+          Also: PHP, C, Python (?)
+        </p>
+      </section>
+
+      <section class="employment">
+        <h2>Employment</h2>
+
+        <h3>
+          <span>UX Engineer at Lighthouse London</span>
+          <span>Lighthouse London</span>
+          <span>June 2018 - Present</span>
+        </h3>
+
+        <h3>
+          <span>Digital Marketing Assistant</span>
+          <span>TNT (FedEx)</span>
+          <span>Sep 2015 - Sep 2016</span>
+        </h3>
+      </section>
+
+      <section class="academic">
+        <h2>Academic</h2>
+
+        <h3>
+          <span>Computer Science (Games) BSc(Hons)</span>
+          <span>Brighton University</span>
+          <span>2013 - 2015, 2016 - 2018</span>
+        </h3>
+
+        <p>Top modules and focus</p>
+        <ul>
+          <li>Human computer interaction and user experience design.</li>
+          <li>General programming (C, C++, Java), testing, 3D graphics.</li>
+          <li>Web-based games, and mobile app development.</li>
+          <li>Applied intelligent systems - neuroevolutionary neural networks, and a final year project that combined my AI work with hardware and computer-vision, mainly in Python.</li>
+        </ul>
+
+        <h3>
+          <span>Alton College</span>
+          <span>2010 - 2012</span>
+        </h3>
+        <p>A-Levels in Computing, Electronics, Physics</p>
+      </section>
+
+      <section>
+        <h2>Interests</h2>
+
+        <p>In my free time I play video games, and I occasionally enter game jams with tiny JavaScript games (won js1k, top 30 js13kGames a few times).</p>
+
+        <p>I’m an experienced Dungeons & Dragons player and Game Master.</p>
+
+        <p>I enjoy building PCs and general tech/hardware - I’ve turned a few Nerf blasters into game controllers.</p>
+
+        <p>I’ve got a whole lot of Lego, I used to run Minecraft and other game servers, and I’ve got a dog named Atlas!</p>
+      </section>
+    </main>
+  </body>
+</html>
