@@ -6,6 +6,10 @@
     <meta charset="utf-8" />
 
     <style>
+      li {
+        margin-block: .25rem
+      }
+
       body {
         font-family: sans-serif;
         margin: 0;
@@ -14,7 +18,7 @@
       }
 
       main {
-        grid-template-columns: 280px 1fr;
+        grid-template-columns: 300px 1fr;
         background: #fff;
         color: #222;
         margin: 1rem;
@@ -29,7 +33,7 @@
       }
 
       main section {
-        padding: 1.25rem;
+        padding: 1.5rem;
       }
 
       .about, .skills {
@@ -44,9 +48,19 @@
         background: #fc1;
       }
 
-      .about > div {
+      .about > div > div {
         display: flex;
-        gap: .5rem;
+        gap: .25rem;
+        margin-block-start: .2rem;
+      }
+
+      .about a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .about a:hover {
+        text-decoration: underline;
       }
 
       .skills {
@@ -69,10 +83,6 @@
         margin-block-end: 0;
       }
 
-      h2 {
-        margin-block-end: .5em;
-      }
-
       h1 {
         display: grid;
         margin-block-start: 0;
@@ -82,6 +92,40 @@
       h1 > *:nth-child(2) {
         font-size: 1.125rem;
         font-weight: normal;
+      }
+
+      h2 {
+        margin-block-end: 1.5rem;
+        padding-block-end: .75rem;
+        border-bottom: 1px solid #0002;
+      }
+
+      h3 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        margin-block-start: 1.5rem;
+      }
+
+      h3 > *:nth-child(2) {
+        margin-inline-start: auto;
+        opacity: .7;
+      }
+
+      h3 > *:nth-child(3) {
+        width: 100%;
+      }
+
+      h3 > *:nth-child(1) ~ * {
+        font-size: .7em;
+      }
+
+      .icon {
+        filter: grayscale(1);
+        width: 1.25em;
+        display: grid;
+        place-items: center;
+        aspect-ratio: 1;
       }
     </style>
   </head>
@@ -94,26 +138,30 @@
           <span>Senior Front-End Developer</span>
         </h1>
 
-        <div>📨<a href="mailto:burntcustard@gmail.com">burntcustard@gmail.com</a></div>
-        <div>📞<a href="tel:07825663225">07825663225</a></div>
-        <div><img alt="" src="https://static.licdn.com/sc/h/8s162nmbcnfkg7a0k8nq9wwqo" width="20" height="20"/><a href="https://www.linkedin.com/in/john-evans-737958b0/">LinkedIn</a></div>
-        <div>🌐<a href="https://burnt.io/">burnt.io</a></div>
-        <div><span>📍</span>Godalming, UK</div>
+        <div class="infos">
+          <div><div class="icon">📨</div><a href="mailto:burntcustard@gmail.com">burntcustard@gmail.com</a></div>
+          <div><div class="icon">📞</div><a href="tel:07825663225">07825663225</a></div>
+          <div><div class="icon"><img alt="" src="https://static.licdn.com/sc/h/8s162nmbcnfkg7a0k8nq9wwqo" width="20" height="20"/></div><a href="https://www.linkedin.com/in/john-evans-737958b0/">LinkedIn</a></div>
+          <div><div class="icon">🌐</div><a href="https://burnt.io/">burnt.io</a></div>
+          <div><div class="icon">📍</div>Godalming, UK</div>
+        </div>
       </section>
 
       <section class="intro">
         <h2>About</h2>
 
-        <p>Senior UX Engineer at Lighthouse London, a UX & design agency. During my 5 years at Lighthouse, I’ve worked on many internal and client projects, as a front-end web developer, accessibility specialist, and project lead on small teams of designers and developers.
+        <p>
+          Senior UX Engineer at Lighthouse London, a UX & design agency. During my 5 years at Lighthouse, I’ve worked as a front-end web developer, accessibility specialist, and project lead on small teams of designers and developers.
+        </p>
 
         <p>
-          Frequently the slot-in “front of the front-end” engineer within a development team, bridging the gap between static designs, and interactive, responsive products and websites. In those teams I:
+          Frequently the slot-in “front of the front-end” engineer within a client development team, bridging the gap between static designs, and interactive, responsive products and websites. In those teams I:
         </p>
 
         <ul>
           <li>Lead on styling, choosing CSS tools, libraries, and techniques.</li>
-          <li>Create web components (usually with React, TypeScript, & Jest), often as part of a design system.</li>
-          <li>Upskill other team members in styling tools chosen, as well as UX best practices and accessibility.</li>
+          <li>Create tested web components, often as part of a design system.</li>
+          <li>Upskill other team members in CSS, UX best practices, and accessibility.</li>
         </ul>
       </section>
 
@@ -136,15 +184,24 @@
         <h2>Employment</h2>
 
         <h3>
-          <span>UX Engineer at Lighthouse London</span>
-          <span>Lighthouse London</span>
+          <span>UX Engineer</span>
           <span>June 2018 - Present</span>
+          <span>Lighthouse London</span>
         </h3>
+
+        <ul>
+          <li>Worked with 20+ clients, e.g: GOV.UK, Investec, Bank of Kigali, Euromoney.</li>
+          <li>Mentored junior developers, within Lighthouse and within client teams.</li>
+          <li>Managed several simultaneous projects, being the main point of communication between Lighthouse and the client for many of them.</li>
+          <li>Led on UI/UX within client development teams, writing the majority of the styling-related code for products and websites like DT+ and Hiperpool.</li>
+          <li>Accessibility specialist, performing audits and giving advice for existing and in-progress products and websites.</li>
+          <li>Created many WordPress sites, e.g: wearelighthouse.com, alfredand.kuoni.co.uk, hlsi.net, betterbankside.co.uk.</li>
+        </ul>
 
         <h3>
           <span>Digital Marketing Assistant</span>
-          <span>TNT (FedEx)</span>
           <span>Sep 2015 - Sep 2016</span>
+          <span>TNT (FedEx)</span>
         </h3>
       </section>
 
@@ -153,8 +210,8 @@
 
         <h3>
           <span>Computer Science (Games) BSc(Hons)</span>
-          <span>Brighton University</span>
           <span>2013 - 2015, 2016 - 2018</span>
+          <span>Brighton University</span>
         </h3>
 
         <p>Top modules and focus</p>
