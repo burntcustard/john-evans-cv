@@ -48,11 +48,6 @@
       }
 
       main {
-        --background: white;
-        --background-secondary: var(--white-200);
-        --color: var(--black-800);
-        --color-secondary: var(--black-800);
-        --line-color: var(--white-400);
         grid-template-columns: 300px 1fr;
         background: var(--background);
         color: var(--color);
@@ -194,15 +189,15 @@
         opacity: 0;
       }
 
-      label span,
-      button span {
+      label > span > span,
+      button > span {
         border-radius: 1rem;
         padding-inline: .6rem;
         padding-block: .1rem;
       }
 
-      input:checked + label span:nth-child(1),
-      input:not(:checked) + label span:nth-child(2) {
+      input:checked + label > span > span:nth-child(2),
+      input:not(:checked) + label > span > span:nth-child(1) {
         background: white;
       }
 
@@ -212,6 +207,48 @@
         --color: var(--white-300);
         --color-secondary: var(--white-300);
         --line-color: var(--white-500);
+      }
+
+      input:not(:checked) ~ main {
+        --background: white;
+        --background-secondary: var(--white-200);
+        --color: var(--black-800);
+        --color-secondary: var(--black-800);
+        --line-color: var(--white-400);
+      }
+
+      .dark-default {
+        display: none;
+      }
+
+      .light-default {
+        display: flex;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .dark-default {
+          display: flex;
+        }
+
+        .light-default {
+          display: none;
+        }
+
+        input:checked ~ main {
+          --background: white;
+          --background-secondary: var(--white-200);
+          --color: var(--black-800);
+          --color-secondary: var(--black-800);
+          --line-color: var(--white-400);
+        }
+
+        input:not(:checked) ~ main {
+          --background: var(--black-700);
+          --background-secondary: var(--black-600);
+          --color: var(--white-300);
+          --color-secondary: var(--white-300);
+          --line-color: var(--white-500);
+        }
       }
 
       input:focus-visible ~ label,
@@ -226,8 +263,14 @@
   <body>
     <input id="theme" type="checkbox" name="theme">
     <label for="theme">
-      <span class="dark">Dark Mode</span>
-      <span class="light" aria-hidden="true">Light Mode</span>
+      <span class="dark-default">
+        <span class="dark" aria-hidden="true">Dark Mode</span>
+        <span class="light">Light Mode</span>
+      </span>
+      <span class="light-default">
+        <span class="light" aria-hidden="true">Light Mode</span>
+        <span class="dark">Dark Mode</span>
+      </span>
     </label>
 
     <button id="export">
@@ -361,7 +404,7 @@
         <h2>Interests</h2>
 
         <p>
-          Long-term <strong>Linux</strong> user, with professional experience developing on and for Linux, Windows, macOS, Android, iOS. I create <strong>tiny JS games</strong> (js1k winner, top 30 js13kGames). I’m an avid <strong>Dungeons & Dragons</strong> player and Game Master. I build PCs, keyboards, and occasionally turn Nerf blasters into game controllers.
+          Long-term <strong>Linux</strong> user, with professional experience developing on and for Linux, Windows, macOS, Android, iOS. I create <strong>tiny JS games</strong> (js1024 winner, top 30 js13kGames). I’m an avid <strong>Dungeons & Dragons</strong> player and Game Master. I build PCs, keyboards, and occasionally turn Nerf blasters into game controllers.
         </p>
       </section>
     </main
