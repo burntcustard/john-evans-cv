@@ -183,22 +183,27 @@
 
       label,
       button {
-        vertical-align: top;
-        box-sizing: content-box;
         font-size: 1rem;
         display: inline-flex;
         margin-block-end: 1rem;
-        margin-inline-end: .5rem;
-        padding: 2px;
+        padding: 3px;
         background: var(--white-400);
         height: 1.5rem;
         border-radius: 1rem;
         user-select: none;
         outline: 2px solid transparent;
         outline-offset: 2px;
+        transition: background-color .2s, outline-color .1s;
+      }
+
+      label {
+        margin-inline-end: .5rem;
+      }
+
+      button {
+        box-sizing: content-box;
         line-height: inherit;
         border: none;
-        transition: background-color .2s, outline-color: .1s;
       }
 
       input {
