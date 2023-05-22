@@ -25,11 +25,7 @@
       }
 
       li {
-        margin-block: .5rem
-      }
-
-      li:last-child {
-        margin-block-end: 0;
+        margin-block: .25rem
       }
 
       dd {
@@ -119,7 +115,8 @@
         margin-block-start: 0;
       }
 
-      section > *:last-child {
+      section > *:last-child,
+      section > *:last-child > *:last-child {
         margin-block-end: 0;
       }
 
@@ -144,6 +141,11 @@
         display: flex;
         flex-wrap: wrap;
         align-items: baseline;
+        margin-block-start: 2rem;
+        margin-block-end: 1rem;
+      }
+
+      h2 + h3 {
         margin-block-start: 1.5rem;
       }
 
@@ -158,11 +160,6 @@
 
       h3 > *:nth-child(3) {
         width: 100%;
-      }
-
-      .skills h3 {
-        font-size: 1.1rem;
-        margin-block: 0;
       }
 
       .icon {
@@ -325,8 +322,8 @@
           <li>Mentored junior developers, within Lighthouse and within client teams.</li>
           <li>Managed several simultaneous projects, for many being the main point of communication between Lighthouse and the client.</li>
           <li>Led on UI/UX within client development teams, writing the majority of styling-related code for products and websites like DT+ and Hiperpool.</li>
-          <li>Accessibility specialist, performing audits and giving advice for existing and in-progress products and websites.</li>
-          <li>Created WordPress sites, e.g: wearelighthouse.com, alfredand.kuoni.co.uk, hlsi.net, betterbankside.co.uk.</li>
+          <li>Accessibility, performance, and SEO specialist - performing audits and giving advice for products, websites, emails and more.</li>
+          <li>Created WordPress sites, e.g: wearelighthouse.com, alfredand.kuoni.co.uk, hlsi.net.</li>
         </ul>
 
         <h3>
@@ -345,12 +342,12 @@
           <span>Brighton University</span>
         </h3>
 
-        <p>Top modules and focus</p>
+        <p>Specialised in:</p>
         <ul>
-          <li>Human computer interaction and user experience design.</li>
-          <li>General programming (C, C++, Java), testing, 3D graphics.</li>
-          <li>Web-based games, and mobile app development.</li>
-          <li>Applied intelligent systems - neuroevolutionary neural networks and computer-vision, mainly using JavaScript and Python.</li>
+          <li>Human computer interaction, and user experience design.</li>
+          <li>Programming-heavy modules (C, C++, Java), testing, 3D graphics.</li>
+          <li>Web-based games, mobile app development.</li>
+          <li>Applied intelligent systems, neural networks, computer-vision (JS, Python).</li>
         </ul>
 
         <h3>
@@ -364,10 +361,10 @@
         <h2>Interests</h2>
 
         <p>
-          I create <strong>tiny JavaScript games</strong> (js1k winner, top 30 js13kGames). I’m an experienced <strong>Dungeons & Dragons</strong> player and Game Master. I enjoy building PCs, modding tech/hardware, and I’ve turned a few Nerf blasters into game controllers. I’ve got a whole lot of Lego, I used to <strong>run game servers</strong> (Minecraft, Garrys Mod), and I’ve got a dog named Atlas!
+          Long-term <strong>Linux</strong> user, with professional experience developing on and for Linux, Windows, macOS, Android, iOS. I create <strong>tiny JS games</strong> (js1k winner, top 30 js13kGames). I’m an avid <strong>Dungeons & Dragons</strong> player and Game Master. I build PCs, keyboards, and occasionally turn Nerf blasters into game controllers.
         </p>
       </section>
-    </main>
+    </main
   </body>
 
   <script>
@@ -376,21 +373,22 @@
       main.style.width = '1000px';
       main.style.lineHeight = '1.3';
       main.style.fontFamily = 'helvetica';
-      main.querySelectorAll('li').forEach(li => li.style.marginBlock = '0');
-      doc = new window.jspdf.jsPDF({ unit: 'px' });
+      main.querySelectorAll('li').forEach(li => li.style.margin = '0');
+      const doc = new window.jspdf.jsPDF({
+        unit: 'px',
+        format: [main.scrollWidth, main.scrollHeight + 2],
+      });
       doc.html(main, {
-        width: doc.internal.pageSize.getWidth(),
-        windowWidth: 1000,
-        callback: doc => doc.save(),
+        callback: doc => doc.save('john-evans-cv'),
         html2canvas: {
           ignoreElements: e => e.className === 'icon',
-          onclone: () => {
+          onclone: (doc2) => {
             main.style.width = '';
             main.style.lineHeight = '';
             main.style.fontFamily = '';
-            main.querySelectorAll('li').forEach(li => li.style.marginBlock = '');
-          }
-        }
+            main.querySelectorAll('li').forEach(li => li.style.margin = '');
+          },
+        },
       });
     }
   </script>
