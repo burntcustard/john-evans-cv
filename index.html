@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="John Evans, Senior Front-End Developer, CV 2023.">
 
-    <script async src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
-    <script async src="https://unpkg.com/html2canvas@latest/dist/html2canvas.min.js"></script>
+    <script defer src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script defer src="https://unpkg.com/html2canvas@latest/dist/html2canvas.min.js"></script>
 
     <style>
       :root {
@@ -217,15 +217,15 @@
         outline-color: var(--yellow);
       }
 
-      label option,
+      label .option,
       button span {
         border-radius: 1rem;
         padding-inline: .6rem;
         padding-block: .1rem;
       }
 
-      input:checked + label option:nth-child(2),
-      input:not(:checked) + label option:nth-child(1) {
+      input:checked + label .option:nth-child(2),
+      input:not(:checked) + label .option:nth-child(1) {
         background: white;
       }
 
