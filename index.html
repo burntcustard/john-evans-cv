@@ -210,6 +210,13 @@
         opacity: 0;
       }
 
+      input:focus-visible ~ label,
+      label:hover,
+      button:focus-visible,
+      button:hover {
+        outline-color: var(--yellow);
+      }
+
       label option,
       button span {
         border-radius: 1rem;
@@ -270,13 +277,6 @@
           --color-secondary: var(--white-300);
           --line-color: var(--white-500);
         }
-      }
-
-      input:focus-visible ~ label,
-      label:hover,
-      button:focus-visible,
-      button:hover {
-        outline-color: var(--yellow);
       }
     </style>
   </head>
