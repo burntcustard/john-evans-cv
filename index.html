@@ -211,16 +211,24 @@
         opacity: 0;
       }
 
-      label > span > span,
-      button > span {
+      label option,
+      button span {
         border-radius: 1rem;
         padding-inline: .6rem;
         padding-block: .1rem;
       }
 
-      input:checked + label > span > span:nth-child(2),
-      input:not(:checked) + label > span > span:nth-child(1) {
+      input:checked + label option:nth-child(2),
+      input:not(:checked) + label option:nth-child(1) {
         background: white;
+      }
+
+      .dark-default {
+        display: none;
+      }
+
+      .light-default {
+        display: flex;
       }
 
       input:checked ~ main {
@@ -237,14 +245,6 @@
         --color: var(--black-800);
         --color-secondary: var(--black-800);
         --line-color: var(--white-400);
-      }
-
-      .dark-default {
-        display: none;
-      }
-
-      .light-default {
-        display: flex;
       }
 
       @media (prefers-color-scheme: dark) {
@@ -286,12 +286,12 @@
     <input id="theme" type="checkbox" name="theme">
     <label for="theme">
       <span class="dark-default">
-        <span class="dark" aria-hidden="true">Dark Mode</span>
-        <span class="light">Light Mode</span>
+        <span class="option dark" aria-hidden="true">Dark Mode</span>
+        <span class="option light">Light Mode</span>
       </span>
       <span class="light-default">
-        <span class="light" aria-hidden="true">Light Mode</span>
-        <span class="dark">Dark Mode</span>
+        <span class="option light" aria-hidden="true">Light Mode</span>
+        <span class="option dark">Dark Mode</span>
       </span>
     </label>
 
