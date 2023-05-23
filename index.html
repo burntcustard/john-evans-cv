@@ -15,16 +15,12 @@
         --white-200: #f4f6f7;
         --white-300: #e4e6e7;
         --white-400: #d4d6d7;
-        --white-500: #c4c6c7;
+        --white-500: #a4a6a7;
+        --black-400: #707172;
         --black-600: #28292a;
-        --black-700: #242627;
+        --black-700: #252627;
         --black-800: #222;
         --yellow: #fc1;
-      }
-
-      main,
-      section {
-        transition: background .2s, color .2s;
       }
 
       li {
@@ -52,9 +48,9 @@
 
       main {
         grid-template-columns: 300px 1fr;
-        background: var(--background);
         box-shadow: 0 2px 8px black;
         max-width: 1e3px;
+        transition: background .2s, color .2s;
       }
 
       @media (min-width: 800px) {
@@ -64,12 +60,12 @@
       }
 
       section {
-        color: var(--color);
         padding: 1.5rem;
+        transition: background .2s;
       }
 
       .about, .skills {
-        grid-column-start: 1;
+        grid-column: 1;
       }
 
       .content {
@@ -94,7 +90,7 @@
       }
 
       a:hover {
-        background-color: #fc1;
+        background-color: var(--yellow);
         color: var(--black-800);
       }
 
@@ -107,8 +103,6 @@
       }
 
       .skills {
-        background: var(--background-secondary);
-        color: var(--color-secondary);
         grid-row-start: 2;
         grid-row-end: 9;
       }
@@ -142,7 +136,7 @@
       h2 {
         margin-block-end: 1.5rem;
         padding-block-end: .75rem;
-        border-bottom: 1px solid var(--line-color);
+        border-bottom: 2px solid #c4c6c799;
         transition: border-color .2s;
       }
 
@@ -159,8 +153,8 @@
         margin-block-start: 1.5rem;
       }
 
-      h3 > *:nth-child(1) ~ * {
-        opacity: .7;
+      h3 :nth-child(n+2) {
+        transition: color .2s;
         font-size: 1rem;
       }
 
@@ -237,20 +231,30 @@
         display: flex;
       }
 
-      input:checked ~ main {
-        --background: var(--black-700);
-        --background-secondary: var(--black-600);
-        --color: var(--white-300);
-        --color-secondary: var(--white-300);
-        --line-color: var(--white-500);
+      main {
+        background: white;
+        color: var(--black-800);
       }
 
-      input:not(:checked) ~ main {
-        --background: white;
-        --background-secondary: var(--white-200);
-        --color: var(--black-800);
-        --color-secondary: var(--black-800);
-        --line-color: var(--white-400);
+      .skills {
+        background: var(--white-200);
+      }
+
+      h3 :nth-child(n+2) {
+        color: var(--black-400);
+      }
+
+      input:checked ~ main {
+        background: var(--black-700);
+        color: var(--white-300);
+      }
+
+      input:checked ~ main .skills {
+        background: var(--black-600);
+      }
+
+      input:checked ~ main h3 :nth-child(n+2) {
+        color: var(--white-500);
       }
 
       @media (prefers-color-scheme: dark) {
@@ -262,20 +266,30 @@
           display: none;
         }
 
-        input:checked ~ main {
-          --background: white;
-          --background-secondary: var(--white-200);
-          --color: var(--black-800);
-          --color-secondary: var(--black-800);
-          --line-color: var(--white-400);
+        main {
+          background: var(--black-700);
+          color: var(--white-300);
         }
 
-        input:not(:checked) ~ main {
-          --background: var(--black-700);
-          --background-secondary: var(--black-600);
-          --color: var(--white-300);
-          --color-secondary: var(--white-300);
-          --line-color: var(--white-500);
+        main .skills {
+          background: var(--black-600);
+        }
+
+        main h3 :nth-child(n+2) {
+          color: var(--white-500);
+        }
+
+        input:checked ~ main {
+          background: white;
+          color: var(--black-800);
+        }
+
+        input:checked ~ main .skills {
+          background: var(--white-200);
+        }
+
+        input:checked ~ main h3 :nth-child(n+2) {
+          color: var(--black-400);
         }
       }
     </style>
@@ -444,6 +458,8 @@
       });
       doc.html(main, {
         callback: doc => doc.save('john-evans-cv'),
+        width: 1000,
+        windowWidth: 1000,
         html2canvas: {
           ignoreElements: e => e.className === 'icon',
           onclone: (doc2) => {
