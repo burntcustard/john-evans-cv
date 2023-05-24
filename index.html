@@ -12,14 +12,14 @@
 
     <style>
       :root {
-        --white-200: #f4f6f7;
-        --white-300: #e4e6e7;
-        --white-400: #d4d6d7;
-        --white-500: #a4a6a7;
-        --black-400: #707172;
-        --black-600: #28292a;
-        --black-700: #252627;
-        --black-800: #222;
+        --gray-1: #f4f6f7;
+        --gray-2: #e4e6e7;
+        --gray-3: #d4d6d7;
+        --gray-4: #a4a6a7;
+        --gray-5: #707172;
+        --gray-6: #28292a;
+        --gray-7: #252627;
+        --gray-8: #222;
         --yellow: #fc1;
       }
 
@@ -42,7 +42,7 @@
       body {
         font-family: sans-serif;
         margin: 1rem;
-        background: var(--black-800);
+        background: var(--gray-8);
         line-height: 1.4;
       }
 
@@ -74,7 +74,7 @@
 
       .about {
         background: var(--yellow);
-        color: var(--black-800);
+        color: var(--gray-8);
       }
 
       .about > div > div {
@@ -91,7 +91,7 @@
 
       a:hover {
         background-color: var(--yellow);
-        color: var(--black-800);
+        color: var(--gray-8);
       }
 
       .about a {
@@ -180,7 +180,7 @@
         display: inline-flex;
         margin-block-end: 1rem;
         padding: 3px;
-        background: var(--white-400);
+        background: var(--gray-3);
         height: 1.5rem;
         border-radius: 1rem;
         user-select: none;
@@ -233,28 +233,28 @@
 
       main {
         background: white;
-        color: var(--black-800);
+        color: var(--gray-8);
       }
 
       .skills {
-        background: var(--white-200);
+        background: var(--gray-1);
       }
 
       h3 :nth-child(n+2) {
-        color: var(--black-400);
+        color: var(--gray-5);
       }
 
       input:checked ~ main {
-        background: var(--black-700);
-        color: var(--white-300);
+        background: var(--gray-7);
+        color: var(--gray-2);
       }
 
       input:checked ~ main .skills {
-        background: var(--black-600);
+        background: var(--gray-6);
       }
 
       input:checked ~ main h3 :nth-child(n+2) {
-        color: var(--white-500);
+        color: var(--gray-4);
       }
 
       @media (prefers-color-scheme: dark) {
@@ -267,29 +267,29 @@
         }
 
         main {
-          background: var(--black-700);
-          color: var(--white-300);
+          background: var(--gray-7);
+          color: var(--gray-2);
         }
 
         .skills {
-          background: var(--black-600);
+          background: var(--gray-6);
         }
 
         h3 :nth-child(n+2) {
-          color: var(--white-500);
+          color: var(--gray-4);
         }
 
         input:checked ~ main {
           background: white;
-          color: var(--black-800);
+          color: var(--gray-8);
         }
 
         input:checked ~ main .skills {
-          background: var(--white-200);
+          background: var(--gray-1);
         }
 
         input:checked ~ main h3 :nth-child(n+2) {
-          color: var(--black-400);
+          color: var(--gray-5);
         }
       }
     </style>
