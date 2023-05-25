@@ -3,8 +3,8 @@
 <html lang="en-GB">
   <head>
     <title>John Evans CV</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="John Evans, Senior Front-End Developer, CV 2023.">
 
     <script defer src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
@@ -323,7 +323,7 @@
         <div class="infos">
           <div><div class="icon">📨</div><a href="mailto:burntcustard@gmail.com">burntcustard@gmail.com</a></div>
           <div><div class="icon">📞</div><a href="tel:07825663225">07825663225</a></div>
-          <div><div class="icon"><img alt="" src="https://static.licdn.com/sc/h/8s162nmbcnfkg7a0k8nq9wwqo" width="20" height="20"/></div><a href="https://www.linkedin.com/in/john-evans-737958b0/">LinkedIn</a></div>
+          <div><div class="icon"><img alt="" src="https://static.licdn.com/sc/h/8s162nmbcnfkg7a0k8nq9wwqo" width="20" height="20"></div><a href="https://www.linkedin.com/in/john-evans-737958b0/">LinkedIn</a></div>
           <div><div class="icon">🌐</div><a href="https://burnt.io/">burnt.io</a></div>
           <div><div class="icon">📍</div>Godalming, UK</div>
         </div>
@@ -443,33 +443,33 @@
         </p>
       </section>
     </main>
-  </body>
 
-  <script>
-    window.export.onclick = () => {
-      const main = document.querySelector('main');
-      main.style.width = '1000px';
-      main.style.lineHeight = '1.3';
-      main.style.fontFamily = 'helvetica';
-      main.querySelectorAll('li').forEach(li => li.style.margin = '0');
-      const doc = new window.jspdf.jsPDF({
-        unit: 'px',
-        format: [main.scrollWidth, main.scrollHeight + 2],
-      });
-      doc.html(main, {
-        callback: doc => doc.save('john-evans-cv'),
-        width: 1000,
-        windowWidth: 1000,
-        html2canvas: {
-          ignoreElements: e => e.className === 'icon',
-          onclone: (doc2) => {
-            main.style.width = '';
-            main.style.lineHeight = '';
-            main.style.fontFamily = '';
-            main.querySelectorAll('li').forEach(li => li.style.margin = '');
+    <script>
+      window.export.onclick = () => {
+        const main = document.querySelector('main');
+        main.style.width = '1000px';
+        main.style.lineHeight = '1.3';
+        main.style.fontFamily = 'helvetica';
+        main.querySelectorAll('li').forEach(li => li.style.margin = '0');
+        const doc = new window.jspdf.jsPDF({
+          unit: 'px',
+          format: [main.scrollWidth, main.scrollHeight + 2],
+        });
+        doc.html(main, {
+          callback: doc => doc.save('john-evans-cv'),
+          width: 1000,
+          windowWidth: 1000,
+          html2canvas: {
+            ignoreElements: e => e.className === 'icon',
+            onclone: (doc2) => {
+              main.style.width = '';
+              main.style.lineHeight = '';
+              main.style.fontFamily = '';
+              main.querySelectorAll('li').forEach(li => li.style.margin = '');
+            },
           },
-        },
-      });
-    }
-  </script>
+        });
+      }
+    </script>
+  </body>
 </html>
