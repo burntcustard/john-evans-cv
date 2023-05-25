@@ -128,7 +128,7 @@
         margin-block-end: 1rem;
       }
 
-      h1 > *:nth-child(2) {
+      h1 :nth-child(2) {
         font-size: 1.125rem;
         font-weight: normal;
       }
@@ -147,6 +147,7 @@
         align-items: baseline;
         margin-block-start: 2rem;
         margin-block-end: 1rem;
+        justify-content: space-between;
       }
 
       h2 + h3 {
@@ -158,11 +159,7 @@
         font-size: 1rem;
       }
 
-      h3 > *:nth-child(2) {
-        margin-inline-start: auto;
-      }
-
-      h3 > *:nth-child(3) {
+      h3 :nth-child(3) {
         width: 100%;
       }
 
@@ -376,9 +373,8 @@
           <dt>CI/CD</dt>
           <dd>GitHub Actions</dd>
           <dd>GitLab CI/CD</dd>
-          <dt>Cross-OS dev</dt>
-          <dd>Linux, Windows, macOS, Android, iOS</dd>
-          <dt>Other</dt>
+          <dd>Docker</dd>
+          <dt>Other Languages</dt>
           <dd>PHP</dd>
           <dd>Bash</dd>
           <dd>Python</dd>
