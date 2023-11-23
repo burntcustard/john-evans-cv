@@ -1,4 +1,4 @@
-window.export.onclick = () => {
+document.querySelector('#export').onclick = () => {
   document.body.classList.add('light');
   const main = document.querySelector('main');
   main.style.width = '1000px';
